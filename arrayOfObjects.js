@@ -1,3 +1,5 @@
+// array of objects in JS and accessing it's values
+
 const data = [
   {
   name1 : "AKshit",
