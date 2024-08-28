@@ -1,2 +1,2 @@
 # JavaScript-Practice
-repo for Workspace of Js practice
+- repo for my Js practice
