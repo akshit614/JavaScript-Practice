@@ -1,5 +1,5 @@
-// ********** Creating Asynchro functions with using callback and promises ********** 
-// Promised are best fir for asynchronous function
+// ********** Asynchronous functions using callback and promises ********** 
+// Promised are best fit for asynchronous function
 
 const fs = require("fs");
 
@@ -14,12 +14,12 @@ function akReadsFile(callback){
 function onDone(data){
   console.log(data);
 }
-console.log("hi there"); //This will be printed to screen first because fs.readFile is a time taking function as it's nature is asynchronous
+console.log("hi there"); //This will be printed to screen first because fs.readFile is a time taking a function as its nature is asynchronous
 
 akReadsFile(onDone)
 
 
-//Good way using promises
+//A good way is to use promises
 function AkshReadsFile(){
   return new Promise(function(resolve){
     fs.readFile("a.txt" ,"utf-8", function(err, data){
@@ -31,7 +31,7 @@ function AkshReadsFile(){
 
 // AkshReadsFile().then(onDone) // .then is used for directing the function what to do next
 
-// Another way to do the previous statement 
+// Another way to make the previous statement 
 let a = AkshReadsFile()
 console.log(a)
 a.then(onDone)
