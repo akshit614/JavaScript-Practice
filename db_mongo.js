@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 const jwt = require("jsonwebtoken")
 
 
-mongoose.connect("mongodb+srv://akkisingh8266:7Ks1540mOobvY0le@cluster0.y6ozh.mongodb.net/userapp") // creates new database naming userapp
+mongoose.connect("mongodb+srv://<your username>:<your password>@cluster0.y6ozh.mongodb.net/userapp") // creates new database naming userapp
 
 // defining that how the user object should look alike (fields,values,types etc...) 
 const userSchema = mongoose.Schema({
