@@ -1,0 +1,41 @@
+<html>
+    <body>
+        <input  oninput="debouncePopulateDiv()" id="firstNumber" type="text" name="1stnumber" placeholder="1st number"><br><br>
+        <!-- oninput -> let you call the function as soon as we input any value to the field
+          -->
+        <input oninput="debouncePopulateDiv()" id="secondNumber" type="text" name="2ndnumber" placeholder="2nd number"><br><br>
+
+        <!-- <button onclick="populateDiv()">calculate Sum</button> -->
+        <div id="finalSum"></div>
+    </body>
+    
+    <script>
+        // deboncing -- it means we want to send request after some time of entering input in textarea or input field
+        // it helps in reducing load of multiple request at a time from the server
+
+        let timeout;
+
+        // this function creates a clock and delay the request untill we take a breather or break of 1 second after typing input
+        // this will reduces the load on server by decreasing the number of requests that were going countiniously without using debouncing
+        function debouncePopulateDiv(){
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                populateDiv()
+            }, 1000);
+        }
+
+
+        function populateDiv(){
+            const a = document.getElementById("firstNumber").value;
+            const b = document.getElementById("secondNumber").value;
+            const element = document.getElementById("finalSum")
+            console.log(element);
+            fetch("https://sum-server.100xdevs.com/sum?a="+ a +"&b=" + b).then(function(response){
+                response.text().then(function(ans){
+                    document.getElementById("finalSum").innerHTML = ans;
+                })
+            })
+        }
+
+    </script>
+</html>
