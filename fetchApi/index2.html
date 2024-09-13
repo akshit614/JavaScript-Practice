@@ -1,0 +1,30 @@
+<html>
+    <body>
+        <input  oninput="populateDiv()" id="firstNumber" type="text" name="1stnumber" placeholder="1st number"><br><br>
+        <!-- oninput -> let you call the function as soon as we input any value to the field
+          -->
+        <input oninput="populateDiv()" id="secondNumber" type="text" name="2ndnumber" placeholder="2nd number"><br><br>
+
+        <!-- <button onclick="populateDiv()">calculate Sum</button> -->
+        <div id="finalSum"></div>
+    </body>
+    <!-- what is means to be dynamic website
+     - changing the elements on the website once it is loaded
+     - for making website dynamic we have to use JS
+     - Here comes the concept of frameworks like react that lets you so it easily and also on a big scale
+     - Actually taking input from input boxs and rensering it on screen -->
+    <script>
+        // now we make it dynamic
+        function populateDiv(){
+            const a = document.getElementById("firstNumber").value;
+            const b = document.getElementById("secondNumber").value;
+            const element = document.getElementById("finalSum")
+            // we get the values of any field of html by using getElementById()
+            console.log(element);
+            // fetch("https://sum-server.100xdevs.com/sum?a="+ a +"&b=" + b)
+            element.innerHTML = parseInt(a) + parseInt(b);
+            // .innerHTML is used to print dynamically on html page
+        }
+
+    </script>
+</html>
