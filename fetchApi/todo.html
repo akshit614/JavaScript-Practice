@@ -1,0 +1,71 @@
+ <!-- creating basic todo page with DOM manupulation -->
+
+<html>
+    <center>
+    <script>
+        
+        let globalId = 1;
+
+        function markAsDone(todoId){
+            const parent = document.getElementById(todoId);
+            parent.children[2].innerHTML = "Done!";
+            
+            // console.log(parent.children[2]); 
+            
+        }
+
+        function removeTodo(todoId){
+            const parent = document.getElementById(todoId);
+            parent.remove();
+        }
+        function createChild(title,description,id){
+
+            const child = document.createElement("div");
+            const firstGrandChild = document.createElement("div");
+            firstGrandChild.innerHTML = title;
+            const secondGrandChild = document.createElement("div");
+            secondGrandChild.innerHTML = description;
+            const thirdGrandChild = document.createElement("button");
+            thirdGrandChild.innerHTML = "Mark as done";
+            const fourthGrandChild = document.createElement("button");
+            fourthGrandChild.innerHTML = "Remove";
+            thirdGrandChild.setAttribute("onclick",`markAsDone(${id})`);
+            fourthGrandChild.setAttribute("onclick",`removeTodo(${id})`);
+            child.appendChild(firstGrandChild);
+            child.appendChild(secondGrandChild);
+            child.appendChild(thirdGrandChild);
+            child.appendChild(fourthGrandChild);
+            child.setAttribute("id",id);
+            return child;
+        }
+        function addTodo(){
+            const title = document.getElementById("title").value;
+            const description = document.getElementById("description").value;
+            parent = document.getElementById("todo");
+            
+            parent.appendChild(createChild(title,description,globalId++));
+            
+            //ugly way to achive the goal
+
+            // document.getElementById("todo").innerHTML =document.getElementById("todo").innerHTML + `
+            // <br><div>${Title}</div>
+            // <div>${Description}</div><br>
+            // <button>Mark as done</button>
+            // <button>Remove</button>`;
+        }
+    </script>
+    <body>
+        <input type="text" placeholder="Title" id="title"><br><br>
+        <input type="text" placeholder="Description" id="description"><br><br>
+
+        <button onclick="addTodo()">
+            Add Todo
+        </button>
+
+        <div id="todo">
+            
+        </div>
+
+    </body>
+    </center>
+</html>
