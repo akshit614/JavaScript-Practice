@@ -53,7 +53,7 @@ function Button(){
 function Button2(){
   console.log("Button2 re-render");
 
-    const setCount = useSetRecoilState(countAtom); // This recoil hook give us both recoil state variables (variable and setVariable)
+    const setCount = useSetRecoilState(countAtom); // This recoil hook give us only set state variable and it is optimal to use it when other variable not needed
   return <div>
     Button2 component buttons <br />
     <button onClick={() => {setCount(c => c + 1)}}> Increament </button><br /><br />
