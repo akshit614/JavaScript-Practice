@@ -6,9 +6,11 @@ function App(){
 
   return (
     <>
+    <center>
       <RecoilRoot>
         <Todos />
       </RecoilRoot>
+      </center>
     </>
   )
 }
@@ -45,10 +47,9 @@ function AddTodo(){
 
   return <div>
 
-    <input type="text" value={title} placeholder="Title" onInput={titleOnChange}/>
-    <br /><br />
+    Title : <input type="text" value={title} placeholder="Title" onInput={titleOnChange}/><br /><br />
 
-    <input type="text" value={description} placeholder="Description" onInput={descOnChange} /> <br /><br />
+    Desciption : <input type="text" value={description} placeholder="Description" onInput={descOnChange} /> <br /><br />
 
     <button onClick={addItem}>Add todo</button> <br /><br />
 
@@ -62,7 +63,7 @@ function TodosRendr(){
 return <div>
         {todo.map(function (todo,index) {
           return <div key={index}>
-              <h1>{todo.title}</h1>
+              <h2>{todo.title}</h2>
               <p>{todo.description}</p>
             </div>
             })}
