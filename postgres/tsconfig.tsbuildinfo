@@ -1,1 +1,1 @@
-{"root":["./src/preventingsqlinjection.ts","./src/index.ts","./src/selectquery.ts"],"version":"5.6.3"}
+{"root":["./src/preventingsqlinjection.ts","./src/index.ts","./src/relationsipssql.ts","./src/selectquery.ts"],"version":"5.6.3"}
