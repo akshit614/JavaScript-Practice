@@ -29,6 +29,6 @@ console.log(greeting.apply(obj,[11, "cricket"]));
 const bindFn = greeting.bind(obj)
 // now this bindFn has the body of greeting and context of obj for it's whole life
 
-console.log(bindFn(25, "eating pussy"));
+console.log(bindFn(25, "eating shusie"));
 console.log(bindFn(35, "reading books")); // now we can use bindFn as a copy of greeting always 
 
